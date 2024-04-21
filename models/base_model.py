@@ -3,7 +3,7 @@
 import uuid
 from datetime import datetime
 
-
+Base = declarative_base()
 class BaseModel:
     """A base class for all hbnb models"""
     def __init__(self, *args, **kwargs):
@@ -41,4 +41,4 @@ class BaseModel:
                           (str(type(self)).split('.')[-1]).split('\'')[0]})
         dictionary['created_at'] = self.created_at.isoformat()
         dictionary['updated_at'] = self.updated_at.isoformat()
-        return dictionary
+    return dictionary
